@@ -1,0 +1,60 @@
+<?php
+	/*
+	*	Things to do:
+		1.disable the insurance product field. - done
+		2. Modify price search and add buy online button to link to this webform. - done
+		3. Add "the insured" support which links to current logged in user. Once the "the insured" is selected, it will auto complete the fields.
+		4. when people click next, it save the result.
+	*/
+	/*
+	 * Implemetation of hook_init
+	 * */
+	function webis_quicklogin_init()
+	{
+		
+		drupal_add_css(drupal_get_path('module', 'webis_quicklogin') .'/css/webis_quicklogin.css');
+		
+ 	}
+
+
+/**
+ * Implementation of hook_block().
+ */
+function webis_quicklogin_block($op = 'list', $delta = 0, $edit = array()) {
+  switch ($op) {
+    case 'list':
+      $block = array();
+
+      // Special block for multi
+      $block[0] = array(
+        'info' => t('Webis quick login block'),
+      );
+      break;
+    case 'view':
+      if ($delta == 0) {
+      	global $user;
+      	if (!$user->uid){
+      		$sign_in = l( '<span>'.t('Sign in').'</span>', 
+      					'user/login', 
+      					array( 'html' => TRUE, 'query' => drupal_get_destination(), 'attributes' => array('class' => 'login', 'id' => 'quicklogin-login', 'title' => t('login to my account') ) ) );
+      		$sign_up = l( '<span>'.t('Register').'</span>', 
+      					'user/register', 
+      					array( 'html' => TRUE, 'query' => drupal_get_destination(), 'attributes' => array('class' => 'signup', 'id' => 'quicklogin-register', 'title' => t('Create new account') ) ));
+      		$block_content = $sign_in." | ".$sign_up;
+      	}else{
+      		$sign_in = l( '<span>'.t('My account').'</span>', 
+      					'user', 
+      					array( 'html' => TRUE, 'query' => drupal_get_destination(), 'attributes' => array('class' => 'login', 'id' => 'quicklogin-my-account', 'title' => t('Go to my account') ) ) );
+      		$sign_up = l( '<span>'.t('Logout').'</span>', 
+      					'logout', 
+      					array( 'html' => TRUE, 'query' => drupal_get_destination(), 'attributes' => array('class' => 'signup', 'id' => 'quicklogin-logout', 'title' => t('Logout') ) ));
+      		$block_content = $sign_in." | ".$sign_up;
+      	}
+      	$block_content = "<div id='webis_quicklogin'>".$block_content."</div>";
+      	$block['subject'] = '';
+		$block['content'] = $block_content;
+      }
+      break;
+  }
+  return $block;
+}

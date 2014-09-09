@@ -1,0 +1,168 @@
+<?php // $Id: viewscarousel3d.module,v 1.1.2.1 2010/08/15 21:44:32 rashad612 Exp $
+
+/**
+ * Implementation of hook_help().
+ *
+ */
+function viewscarousel3d_help($path, $arg) {
+  
+  switch($path) {
+    case 'admin/help#viewscarousel3d':
+      return '<p>' . t('3D Views Carousel is a Views Style Plugin, which implements <a href="@link">Professor Cloud Carousel</a> jQuery plugin. The main goal of the module/jQuery Plugin, is to create a rotated 3D image carousel, a flash-like style.',
+      array('@link' => url('http://www.professorcloud.com/mainsite/carousel.htm', array('absolute' => TRUE)))) . '</p>';
+  }
+
+}// end function viewscarousel3d_help;
+
+/**
+ * Implementation of hook_views_api().
+ *
+ */
+function viewscarousel3d_views_api() {
+  return array('api' => 2);
+}// end function viewscarousel3d_views_api;
+
+function template_preprocess_viewscarousel3d(&$vars) {
+  
+  $view = &$vars['view'];
+  $options = $vars['options'];
+  //krumo($view->field[$options['titleField']]->last_render);
+  // The jQuery plugin takes img "title" attributes and converts it to a caption.
+  // So, if we need a custom field to be the caption, I modified the title attribute of any rendered image in the display,
+  //  and made its value the same as the field value, using PHP regular expression.
+  // @see: http://php.net/preg_replace
+  //krumo($view->display['page_1']->handler->view);
+  if (!empty($options['titleField'])) {
+    $field_alias = $view->field[$options['titleField']]->field_alias;
+    //krumo($vars['view']->result);
+    foreach ($vars['view']->result as $key => &$row) {
+      //krumo($row);
+      
+        //$data = unserialize($row->node_data_field_pic_field_pic_data);
+        
+        $data = array(
+          'alt' => $view->render_field($options['titleField'], 0),
+          'title' => $view->render_field($options['titleField'], 0)
+        );
+        
+        foreach ($row as $i => &$field) {
+          if (preg_match("/^a:\d+:{.*?}$/i", $field)) { // Field is serialized.
+           
+           $field = serialize($data);
+           //$vars['view']->result[$key]->{$i} = serialize($data);
+          }
+        }
+
+      
+    }
+
+    /**foreach ($view->field as $alias => &$field) {
+ 
+        if ($alias != $options['titleField'] && preg_match("/<img[^>]*>/i", $field->last_render)) {
+          $img_title = $field->last_render;
+          $vars['view']->field[$alias]->original_value = '0';
+          //krumo($vars['view']->field[$alias]->last_render);
+          //$vars['rows'][$i] = preg_replace('/title=("[^"]*")/i', 'title="' . $img_title . '"', $vars['rows'][$i]);
+          //unset($vars['view']->style_plugin->rendered_fields[$i][$alias]);// = '';
+          //krumo($vars['view']->style_plugin->rendered_fields[$i][$alias], $field);
+        }
+    }**/
+  }
+  
+  // I think the jQuery plugin has a bug, so it can not accept selector name that contains - or _ 
+  $vars['current_display'] = 'v3d' . $view->name . '_' . preg_replace("/-|_/i", '', $view->current_display);
+  
+  $settings = array(
+    'display_id' => $vars['current_display'],
+    'minScale' => $options['minScale'],
+    'reflHeight' => $options['reflHeight'],
+    'reflGap' => $options['reflGap'],
+    'reflOpacity' => $options['reflOpacity'],
+    'FPS' => $options['FPS'],
+    'speed' => $options['speed'],
+    'autoRotate' => $options['autoRotate'],
+    'autoRotateDelay' => $options['autoRotateDelay'],
+    'mouseWheel' => ($options['mouseWheel'])? TRUE : FALSE,
+    'titleBox' => ($options['titleField'])? TRUE : FALSE,
+    'bringToFront' => ($options['bringToFront'])? TRUE : FALSE,
+    'showButtons' => ($options['showButtons'])? TRUE : FALSE
+  );
+  
+  $path = drupal_get_path('module', 'viewscarousel3d');
+  
+  drupal_add_css($path . '/css/viewscarousel3d.css');
+
+  if($options['mouseWheel'])
+    drupal_add_js($path . '/js/jquery.mousewheel.min.js');
+  
+  drupal_add_js($path . '/js/cloud-carousel.1.0.4.min.js');
+  
+  
+  drupal_add_js(array('viewscarousel3d' => array($vars['current_display'] => $settings)), 'setting');
+ 
+  drupal_add_js($path . '/js/viewscarousel3d.js');
+  
+}// end function template_preprocess_viewscarousel3d;
+
+/**
+ * Implementation of hook_views_pre_render().
+ *
+ */
+ 
+function viewscarousel3d_views_pre_render(&$view) {
+  
+  
+  if ($view->plugin_name == 'viewscarousel3d') {
+    $options = $view->style_options;//krumo($view);
+    if (!empty($options['titleField'])) {
+     foreach ($view->result as $key => &$row) {
+      
+$data = array(
+          'alt' => $view->render_field($options['titleField'], $key),
+          'title' => $view->render_field($options['titleField'], $key)
+        );
+        
+        foreach ($row as $i => &$field) {
+          if (preg_match("/^a:\d+:{.*?}$/i", $field)) { // Field is serialized.
+           
+           $field = serialize($data);
+           //$vars['view']->result[$key]->{$i} = serialize($data);
+          }
+        }
+      
+    }
+  }
+  }
+}// end function viewscarousel3d_views_pre_render;
+
+
+/**
+ * Implementation of template_preprocess_views_ui_edit_view().
+ * 
+ *  To add conditional JavaScript effect, in view style settings.
+ */
+function viewscarousel3d_preprocess_views_ui_edit_view(&$vars) {
+  drupal_add_js(drupal_get_path('module', 'viewscarousel3d') . '/js/viewscarousel3d_options.js');
+}// end function viewscarousel3d_preprocess_views_ui_edit_view;
+
+/**
+ * Only returns true the first time it's called for an id
+ *
+ * @param $id
+ *  A uniqe view id.
+ *
+ * @return bool
+ *  TRUE for the first time called for a given $id
+ *  FALSE for each time after that
+ */
+function theme_viewscarousel3d_display_item($id) {
+  static $display = array();
+
+  if (!isset($display[$id])) $display[$id] = FALSE;
+
+  $output = $display[$id];
+
+  if ($display[$id] == FALSE) $display[$id] = TRUE;
+
+  return $output;
+}

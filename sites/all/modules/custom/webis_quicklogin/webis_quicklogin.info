@@ -1,0 +1,7 @@
+; $Id: webis_quicklogin.info,v 1.0 2010/11/07 14:27:33 chris chen Exp $
+
+name = "Webis Quick Login"
+package = "Webis"
+description = "Provide quick login block."
+core = 6.x
+version = 6.x-1.0

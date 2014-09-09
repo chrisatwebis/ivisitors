@@ -1,0 +1,14 @@
+#webis_quicklogin{
+	float: right;
+}
+
+#webis_quicklogin a{
+	padding-left: 20px;	
+}
+#webis_quicklogin #quicklogin-my-account{
+	background: url("../images/lock.png") no-repeat scroll 0 50% transparent;
+}
+
+#webis_quicklogin #quicklogin-login {
+	background: url("../images/unlock.png") no-repeat scroll 0 50% transparent;
+}

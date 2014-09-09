@@ -1,0 +1,2908 @@
+/**
+ * $Id: theme.css,v 1.1.2.19 2010/03/23 03:29:25 jmburnz Exp $
+ * adaptivethemes.com
+ *
+ * @file theme.css
+ * theme.css is the file to use when building your theme. 
+ * Make a copy first as a backup.
+ */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/**********************************************************
+ *                    HTML & Body
+ **********************************************************/
+html {}
+body {
+  background: url(../../images/bg.png) 0 0 repeat-x transparent;
+/*  font-family: 'Open Sans', Verdana, Geneva, "DejaVu Sans", sans-serif;
+*/}
+
+/* Admin menu */
+body.admin-menu {}
+body.admin-menu #container {
+
+}
+
+/**********************************************************
+ *                 HTML Elements
+ **********************************************************/
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+p {}
+
+strong {}
+em, dfn {}
+dfn {}
+
+sup, sub {}
+
+del {}
+ins {}
+
+blockquote {}
+cite {}
+q {}
+
+address {}
+
+ul {}
+ol {}
+li {}
+
+dl {}
+dd {}
+dt {}
+
+abbr {}
+acronym {}
+
+pre, code, tt {}
+p code {}
+samp {}
+kbd {}
+var {}
+
+
+/**********************************************************
+ *                 Global Link Styles
+ **********************************************************/
+a {}
+a:link    {}
+a:visited {}
+a:hover   {}
+a:active  {}
+a.active  {}
+
+/* Set global a:active and a:focus styles. */
+a:active,
+a:focus {}
+
+
+/**********************************************************
+ *                    Body Classes
+ **********************************************************/
+ /* NOTE: these are not active by default; you need to 
+    enable them in the Advanced theme settings. */
+
+/* Front or not front. */
+.front {}
+.not-front {}
+
+/* Is the user logged in. */
+.logged-in {}
+.not-logged-in {}
+
+/* Content type body classes. */
+.article-type-book  {}
+.article-type-blog  {}
+.article-type-forum {}
+.article-type-page  {}
+.article-type-poll  {}
+.article-type-story {}
+
+	
+/**********************************************************
+ *                  The wrapper divs
+ *    Be careful how you modify these, see layout.css
+ **********************************************************/
+#container {
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 15px 5px #aaa;
+}
+
+/* Column wrappers */
+#columns {}
+.columns-inner {}
+
+/* Content wrappers */
+#content-column {}
+.content-inner {}
+
+/* Main content wrappers*/
+#main-content {}
+#content {}
+
+
+/**********************************************************
+ *                       Regions
+ **********************************************************/
+/* Leaderboard is a full width region at the very top of the page. */
+#leaderboard {}
+
+/* Header region is embedded in the header, floated between the logo/site_name
+   and the search box. */
+#header-region {
+  float: right;
+}
+
+
+/* Menu Bar sits below the header and is ideal for dynamic menus 
+   such as http://drupal.org/project/superfish. */
+#menu-bar {}
+
+/* Secondary content is a full width region between the header and the
+   main columns. */
+#secondary-content {}
+
+/* Tertiary content is a full width region above the footer, below the
+   main content. */
+#tertiary-content {
+  margin: 20px 0 10px;  
+}
+
+/* Content top and bottom are above and below the main content, within the main 
+   content column. Content aside floats to the right within the main central
+   column, but below content top. */
+#content-top {}
+#content-aside {}
+#content-bottom {
+  margin-top: 20px;
+}
+
+/* Article aside appears only in articles (nodes). By default its placed at
+   the bottom of the node.tpl.php template. */
+#article-aside {}
+
+
+/**********************************************************
+ *                      Sidebars
+ **********************************************************/
+/* Target both sidebars with this low specifity selector. */
+.sidebar {
+
+}
+
+/* Target a specific sidebar. */
+#sidebar-first {
+  background: white;
+  background: url("../../images/sidebar_bg.gif") left top no-repeat transparent;  
+}
+#sidebar-last {
+  background: white;
+  background: url("../../images/sidebar_bg.gif") left top no-repeat transparent;
+}
+
+
+/**********************************************************
+ *                   Skip navigation
+ **********************************************************/
+/**
+ * DO NOT USE display:none as this hides it from screen readers!
+ */
+#skip-nav {}
+
+/* Override default pseudo class styles */
+#skip-nav a:link    {}
+#skip-nav a:visited {}
+#skip-nav a:hover   {}
+#skip-nav a:focus   {}
+#skip-nav a:active  {}
+
+
+/**********************************************************
+ *                 Header Elements
+ **********************************************************/
+/* #header wraps #branding, #search-box-top and #header-blocks. */
+#header {
+  margin: 10px 0;
+}
+
+/* #branding wraps #logo, #site-name and #site-slogan. */
+#branding {}
+
+/* Logo and Site Name wrapper. */
+.logo-site-name {}
+
+/* Logo and Site Name wrapper h1 - normally applies only the homepage. */
+h1.logo-site-name  {}
+
+/* Logo and Site Name wrapper DIV - normally applies to all internal pages,
+   or where no title is set. */
+div.logo-site-name {}
+
+/* DIV/strong combo when when title is set. */
+div.logo-site-name strong {}
+
+/* By default the span is set to display:block, you can display:inline
+   or float the elements to get them all on one line. */
+.logo-site-name span {}
+
+/* Logo and Site Name SPAN wrappers. */
+span#logo {}
+span#site-name {}
+
+/* Override default pseudo class styles. */
+#site-name a:link    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+
+/* Site slogan. */
+#site-slogan {}
+
+
+/**********************************************************
+ *    Search box, Advanced search form, Search results
+ *          For the search block see blocks.css
+ **********************************************************/
+/**
+ * Search box
+ */
+/* Float the serch box right. */
+#search-box {}
+
+/* Reset form element margins. */
+#search-theme-form {}
+
+/* Wrapper DIVs */
+#search-theme-form > div {}
+#search-theme-form #search {}
+#edit-search-theme-form-1-wrapper {}
+
+#search-theme-form label {}
+#search-theme-form input {}
+
+#search-theme-form .form-text {}
+#search-theme-form .form-submit {}
+
+/**
+ * Advanced search form
+ */
+/* Advanced search-form id. */
+#search-form {}
+
+/* Use the child selector because the inner div has no class. */
+#search-form > div {}
+#search-form .container-inline {}
+#search-form #edit-keys-wrapper {}
+
+#search-form label {}
+#search-form input {}
+#search-form .form-item {}
+#search-form .form-submit {}
+
+/* Textfield styles. */
+#search-form #edit-keys-wrapper input {}
+#search-form #edit-keys-wrapper input:hover,
+#search-form #edit-keys-wrapper input:focus {}
+
+/* Advanced search fieldset. */
+#search-form fieldset.search-advanced {}
+
+/**
+ * Search results
+ */
+/* Box styles for the results page. */
+.section-search .box {}
+.section-search .box-inner {}
+.section-search .box-title {}
+
+/* Style the no results messages. */
+.section-search .box ul {}
+.section-search .box ul li {}
+
+/* Search results document list. */
+dl.search-results {}
+dl.search-results dt {}
+dl.search-results dd {}
+dl.search-results dd p {}
+dl.search-results dd .search-snippet {}
+dl.search-results dd .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+
+/**********************************************************
+ *               Primary & Secondary Links
+ **********************************************************/
+/* Primary-links div wrapper */
+#primary {}
+
+/* Class on the ul */
+.primary-links {}
+
+/* Modify the margin to set tab spacings. */
+.primary-links li {}
+.primary-links li a {}
+
+/* Set pseudo class styles. */
+.primary-links li a:link {}
+.primary-links li a:visited {}
+.primary-links li a:hover {}
+.primary-links li a:focus {}
+.primary-links li a:active {}
+
+/* Primary first and last classes. */
+.primary-links li.first {}
+.primary-links li.last {}
+
+/* Active trail classes. */
+.primary-links li.active {}
+.primary-links li.active-trail {}
+.primary-links li.active-trail a {}
+
+/* Secondary-links div wrapper */
+#secondary {}
+
+/* Class on the ul */
+.secondary-links {}
+
+/* Modify the margin to set tab spacings. */
+.secondary-links li {}
+.secondary-links li a {}
+
+/* Set pseudo class styles. */
+.secondary-links li a:link {}
+.secondary-links li a:visited {}
+.secondary-links li a:hover {}
+.secondary-links li a:focus {}
+.secondary-links li a:active {}
+
+/* Secondary first and last classes. */
+.secondary-links li.first {}
+.secondary-links li.last {}
+
+/* Active trail classes. */
+.secondary-links li.active {}
+.secondary-links li.active-trail {}
+.secondary-links li.active-trail a {}
+
+
+/**********************************************************
+ *                      Breadcrumb
+ **********************************************************/
+#breadcrumb {}
+#breadcrumb a {}
+#breadcrumb a:link {}
+#breadcrumb a:visited {}
+#breadcrumb a:hover {}
+#breadcrumb a:focus {}
+#breadcrumb a:active {}
+
+
+/**********************************************************
+ *                       Mission
+ **********************************************************/
+#mission {}
+
+
+/**********************************************************
+ *                    H1 Page Title
+ **********************************************************/
+h1#page-title {
+  margin-bottom: 10px;
+}
+.front h1#page-title{
+  display: none;
+}
+
+
+/**********************************************************
+ *                     Pager 
+ **********************************************************/
+/* The first 2 classes provide the base pager styles. */
+ul.pager    {}
+ul.pager li {}
+
+/* Theme the various states of pager links. */
+ul.pager li a:link    {}
+ul.pager li a:visited {}
+ul.pager li a:hover   {}
+
+/* Note: .pager-current is for the current page. */
+ul.pager li.pager-item     {}
+ul.pager li.first          {}
+ul.pager li.last           {}
+ul.pager li.pager-current  {}
+ul.pager li.pager-first    {}
+ul.pager li.pager-previous {}
+ul.pager li.pager-next     {}
+ul.pager li.pager-last     {}
+
+
+/**********************************************************
+ *               Footer, Footer Message
+ **********************************************************/
+#footer {}
+
+#footer-region {
+  background: #131313;
+  padding: 20px 20px;
+}
+#footer-region a {}
+
+#footer-message {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0 0 4px 4px;
+}
+#footer-message a {}
+
+
+/**********************************************************
+ *                 RSS Feed Icon
+ **********************************************************/
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+
+/**********************************************************
+ *                  Generic Content Classes
+ **********************************************************/
+.title {}
+.submitted {}
+.submitted em {}
+.submitted a {}
+.content {}
+ul.links {}
+ul.links li {}
+ul.links li a {}
+
+
+/**********************************************************
+ *                      Articles (nodes)
+ **********************************************************/
+.article {}
+
+/* Teaser title (H2). */
+.article-title {}
+
+.article-title a:link,
+.article-title a:visited {}
+.article-title a:hover,
+.article-title a:focus,
+.article-title a:active {}
+
+/* User Picture. */
+.article .user-picture {}
+.article .user-picture img {}
+
+/* Submitted */
+.article .submitted {}
+.article .submitted em {}
+.article .submitted a {}
+.article .submitted a:hover {}
+.article .submitted .author {}
+.article .submitted .time {}
+
+/* Common links classes. */
+.article ul.links {}
+.article ul.links li {}
+.article ul.links li a {}
+
+/* Taxonomy terms. */
+/* Term list */
+ul.taxonomy {}
+ul.taxonomy li {}
+ul.taxonomy li a {}
+/* With vocab headers */
+ul.taxonomy li.vocab {}
+.vocab-name {}
+ul.vocab-list {}
+ul.vocab-list li {}
+ul.vocab-list li a {}
+
+/* Style module links. */
+ul.links li.node_read_more a {}
+ul.links li.comment_add a {}
+ul.links li.comment_comments a {}
+ul.links li.comment_new_comments a {}
+ul.links li.blog_usernames_blog a {}
+ul.links li.print_html a {}
+ul.links li.print_email a {}
+ul.links li.print_pdf a {}
+
+/* UL link first and last classes. */
+.article ul.links li.first {}
+.article ul.links li.last  {}
+
+/* Workflow states. */
+.article-add    {}
+.article-edit   {}
+.article-delete {}
+.article-preview  {}
+.article-sticky   {}
+.article-promoted {}
+
+/* Status. */
+.article-unpublished {}
+
+/* Theme the teaser seperatly. */
+.article-teaser {}
+
+
+/**********************************************************
+ *                     Content types
+ *              Style article types by type.
+ **********************************************************/
+.book-article  {}
+.blog-article  {}
+.forum-article {}
+.page-article  {}
+.poll-article  {}
+.story-article {}
+
+ /**
+  * Custom Content Types
+  * Replace CONTENT_TYPE with the content type
+  * machine-readable name.
+  */
+.CONTENT_TYPE-article {}
+
+
+/**********************************************************
+ *                    CCK Fields
+ **********************************************************/
+/* Wrapper for any CCK field. */
+.field {}
+
+/* Use "datetime" when creating new CCK date fields. */
+.field-type-datetime {}
+
+/* Filefield field. */
+.field-type-filefield {}
+
+/* Node reference field. */
+.field-type-nodereference {}
+
+/* User reference field. */
+.field-type-userreference {}
+
+/* Number fields. */
+.field-type-number-decimal {}
+.field-type-number-float   {}
+.field-type-number-integer {}
+
+/* Text field. */
+.field-type-text {}
+
+/**
+ * Specific field names.
+ */
+/* Underscores in field name are replaced with dashes. */
+.field-field-FIELDNAME {}
+
+
+/**********************************************************
+ *                     Comments
+ **********************************************************/
+/* Comment wrapper: wraps all comments and the comment form. */
+#comments {}
+#comments-title {}
+
+/* Wrapper class for each individual comment. */
+.comment {}
+
+/* Indentation */
+.comment .indented {}
+
+/* Comment Title (H3) */
+.comment-title {}
+.comment-title a:link,
+.comment-title a:visited {}
+.comment-title a:hover,
+.comment-title a:focus,
+.comment-title a:active {}
+
+/* Comment id (count with pound sign, see line 28 comment.tpl.php) 
+   and comment "new" notification. */
+.comment-id {}
+.comment-title .new {}
+
+
+/* User Picture */
+.comment .user-picture {}
+.comment .user-picture img {}
+
+/* Submitted */
+.comment .submitted {}
+.comment .submitted em {}
+.comment .submitted a {}
+.comment .submitted a:hover {}
+.comment .submitted .author {}
+.comment .submitted .time {}
+
+/* Links */
+.comment ul.links {}
+.comment ul.links li {}
+.comment ul.links li a {}
+
+/* Core comment link classes. */
+ul.links li.comment_reply a {}
+ul.links li.comment_edit a {}
+ul.links li.comment_delete a {}
+
+/* UL link first and last classes. */
+.comment ul.links li.first {}
+.comment ul.links li.last  {}
+
+/* Author */
+.comment-by-anonymous   {}
+.comment-by-article-author {}
+.comment-by-viewer      {}
+
+/* New */
+.comment-new {}
+
+/* Zebra */
+.comment.odd  {}
+.comment.even {}
+
+/* Status */
+.comment-unpublished {}
+
+/* Themes the "Unpublished" text. */
+.comment-unpublished .unpublished {}
+
+/* Comment box wrapper on a seperate page. */
+.section-comment .box {}
+.section-comment .box .box-title {}
+
+/* Comment box wrapper below content. */
+#comments .box {}
+#comments .box .box-title {}
+
+/* Sytle comments by article type. */
+.book-comments  {}
+.blog-comments  {}
+.forum-comments {}
+.page-comments  {}
+.poll-comments  {}
+.story-comments {}
+
+
+/**********************************************************
+ *                       Blocks
+ **********************************************************/
+/**
+ * Styles set for .block, .block-inner, block-title and 
+ * .block-content will be inherited by all blocks.
+ */
+.block {}
+.block-inner   {} /* Block inner div */
+.block-title   {
+  color: #cd3b24;
+  margin: 0 0 10px;
+} /* h2 block title */
+.block-title a{
+  color: #cd3b24;
+  text-decoration: none;
+}
+
+/**********************************************************
+ *                   Sidebar blocks
+ **********************************************************/
+/**
+ * You can target blocks in one or more regions and 
+ * style them differently. 
+ */
+ 
+/* Low specifity selector to style blocks in all regions. */
+.aside .block {}
+.aside .block h2 {}
+.aside .block-inner {}
+
+/* Low specifity selector to style blocks in both sidebars. */
+.sidebar .block {}
+.sidebar .block h2 {}
+.sidebar .block-inner {
+  padding: 0px;
+}
+.sidebar .block p{
+  margin: 5px 0;
+}
+
+/* High specifity selectors to style blocks in one sidebar - be careful,
+   these are powerful selectors! */
+#sidebar-first .block {
+  margin: 10px;
+  padding: 0px;
+}
+#sidebar-first .block h2 {}
+#sidebar-first .block-inner {
+
+}
+
+#sidebar-last .block {
+  margin: 10px;
+  padding: 0px;
+}
+#sidebar-last .block h2 {}
+#sidebar-last .block-inner {}
+
+
+/**********************************************************
+ *                  Region blocks
+ **********************************************************/
+/* High specifity selectors to style blocks in one region. */
+#leaderboard       .block {}
+#header-region  .block{
+  margin: 0px 0px 10px;
+}
+
+#header-region .block .block-inner{
+  padding: 0px;
+}
+
+#menu-bar          .block {
+  margin: 0px;
+}
+#secondary-content .block {}
+#tertiary-content  .block {}
+#content-top       .block {}
+#content           .block {}
+#content-bottom    .block {
+  margin:10px 0;
+}
+/*
+* Section 1 styling
+***/
+#section1 .sections{
+  overflow: hidden;
+  display: block;
+  background: url(../../images/section_bg.gif) 0 0 repeat-x #eceae7;
+  margin-bottom: 12px;  
+}
+
+
+#section1 .section,
+#section2 .section{
+  float: left;
+  width: 25%;
+  clear: none;
+  padding: 0px;
+  margin: 5px 0;
+}
+#section2 .sections{
+  background: url(../../images/header-bottom.gif) 0 0 repeat-x #eceae7;
+  overflow: hidden;
+  display: block;
+  border-top: 1px solid #d7d7d4;
+  padding: 10px;
+}
+
+#section2 .section .block .block-title{
+
+}
+
+#footer-region     .block {
+
+}
+
+#footer-region     .block .block-title{
+  height: 50px;
+  color: white;
+}
+
+
+.block ul.menu{
+  margin: 0px;
+  padding-left: 2px;
+  list-style: none;
+}
+
+.block ul.menu li{
+  list-style: none;
+  list-style-image: none;
+  margin: 5px 0;
+  background: url(../../images/marker.gif) 0 8px no-repeat;
+  padding: 0 0 5px 16px;
+  border-bottom: 1px dotted #626469;
+}
+.block ul.menu li.last{
+  border-bottom: 0px;
+}
+
+.block ul.menu li a{
+  color: #8e8e8e;
+  text-decoration: none;  
+}
+
+.block ul.menu li a:hover{
+  text-decoration: underline;
+}
+
+#footer-region .block-menu_block ul.menu li a:hover{
+  text-decoration: underline;
+}
+
+
+/**********************************************************
+ *                   Module blocks
+ **********************************************************/
+/**
+ * Module Block ID's 
+ * For contributed module blocks the pattern is the same,
+ * i.e. #block-[module]-[delta]
+ */
+#block-book-0       {} /* Book navigation block   */
+#block-blog-0       {} /* Recent Blog posts       */
+#block-comment-0    {} /* Recent Comments block   */
+#block-forum-0      {} /* Active Forum topics     */
+#block-forum-1      {} /* New Forum topics        */
+#block-locale-0     {} /* Language Switcher block */
+#block-node-0       {} /* Syndicate block         */
+#block-poll-0       {} /* Most recent poll        */
+#block-profile-0    {} /* Author information      */
+#block-search-0     {} /* Search form block       */
+#block-statistics-0 {} /* Popular content         */
+#block-system-0     {} /* Powered by Drupal       */
+#block-user-0       {} /* Login block             */
+#block-user-1       {} /* Navigation Menu block   */
+#block-user-2       {} /* Who's New block         */
+#block-user-3       {} /* Who's Online block      */
+
+/* Primary and Secondary links blocks */
+#block-menu-primary-links   {}
+#block-menu-secondary-links {}
+
+/* The class selector applies to all blocks of these types. */
+.block-user {} 
+.block-book {} 
+.block-aggregator {}
+
+
+/**********************************************************
+ *                 Search block form
+ **********************************************************/
+#search-block-form {}
+#block-search-0{
+  float: right;
+}
+
+/* Wrapper DIVs. */
+#search-block-form > div {}
+#search-block-form .container-inline{}
+#edit-search-block-form-1-wrapper {}
+
+#search-block-form label {}
+#search-block-form input {}
+
+#search-block-form .form-submit {
+  padding: 4px 10px;
+}
+#search-block-form .form-text {
+  padding: 4px 10px;
+}
+
+/* Override forms.css focus style */
+#edit-search-block-form-1:hover,
+#edit-search-block-form-1:focus {}
+
+
+/**********************************************************
+ *                   Menu blocks
+ **********************************************************/
+/**
+ * Prefix these with the block id to style one menu only.
+ */
+ul.menu,
+ul.menu ul, 
+ul.menu ul ul, 
+ul.menu ul ul ul {}
+
+/* Menu li styles */
+ul.menu li {}
+
+ul.menu li.collapsed {}
+ul.menu li.expanded  {}
+ul.menu li.leaf      {}
+
+ul.menu li a:link,
+ul.menu li a:visited {}
+ul.menu li a:hover,
+ul.menu li a:focus,
+ul.menu li a:active   {}
+ul.menu li.active a  {}
+ul.menu li.active-trail a {}
+
+ul.menu li.first {}
+ul.menu li.last  {}
+
+
+/**********************************************************
+ *                   Block item-list
+ **********************************************************/
+.block .item-list ul {}
+.block .item-list ul li {}
+
+
+/**********************************************************
+ *                  Gpanel blocks
+ **********************************************************/
+/* Examples to get started. Add col specific selectors to style
+   blocks in different Gpanel columns, or element selectors to
+   style specific elements */
+   
+.two-col-2x50  .block {}
+.two-col-33-66 .block {}
+.two-col-66-33 .block {}
+
+.three-col-3x33     .block {}
+.three-col-25-25-50 .block {}
+.three-col-50-25-25 .block {}
+
+.four-col-4x25 .block {}
+.five-col-5x20 .block {}
+.six-col-6x16  .block {}
+
+
+/**********************************************************
+ *                  Gpanel Regions
+ **********************************************************/
+/**
+ * NOTE: If you are adding borders, padding or margin (anything
+ * that adds width) you should apply these to the INNER div or
+ * the contained element, such as a block or mini-panel.
+ */
+
+.gpanel {}
+.gpanel .region {}
+.gpanel .region .inner {}
+.gpanel .first  .inner {}
+.gpanel .last   .inner {}
+
+/* 2 column */
+.two-col-2x50 {}
+.two-col-2x50 .region {}
+.two-col-2x50 .region .inner {}
+.two-col-2x50 .col-1  {}
+.two-col-2x50 .col-2  {}
+.two-col-2x50 .col-1 .inner {}
+.two-col-2x50 .col-2 .inner {}
+
+.two-col-33-66 {}
+.two-col-33-66 .region {}
+.two-col-33-66 .region .inner {}
+.two-col-33-66 .col-1 {}
+.two-col-33-66 .col-2 {}
+.two-col-33-66 .col-1 .inner {}
+.two-col-33-66 .col-2 .inner {}
+
+.two-col-66-33 {}
+.two-col-66-33 .region {}
+.two-col-66-33 .region .inner {}
+.two-col-66-33 .col-1 {}
+.two-col-66-33 .col-2 {}
+.two-col-66-33 .col-1 .inner {}
+.two-col-66-33 .col-2 .inner {}
+
+/* 3 column */
+.three-col-3x33 {}
+.three-col-3x33 .region {}
+.three-col-3x33 .region .inner {}
+.three-col-3x33 .col-1 {}
+.three-col-3x33 .col-2 {}
+.three-col-3x33 .col-3 {}
+.three-col-3x33 .col-1 .inner {}
+.three-col-3x33 .col-2 .inner {}
+.three-col-3x33 .col-3 .inner {}
+
+.three-col-25-25-50 {}
+.three-col-25-25-50 .region {}
+.three-col-25-25-50 .region .inner {}
+.three-col-25-25-50 .col-1 {}
+.three-col-25-25-50 .col-2 {}
+.three-col-25-25-50 .col-3 {}
+.three-col-25-25-50 .col-1 .inner {}
+.three-col-25-25-50 .col-2 .inner {}
+.three-col-25-25-50 .col-3 .inner {}
+
+.three-col-50-25-25 {}
+.three-col-50-25-25 .region {}
+.three-col-50-25-25 .region .inner {}
+.three-col-50-25-25 .col-1 {}
+.three-col-50-25-25 .col-2 {}
+.three-col-50-25-25 .col-3 {}
+.three-col-50-25-25 .col-1 .inner {}
+.three-col-50-25-25 .col-2 .inner {}
+.three-col-50-25-25 .col-3 .inner {}
+
+/* 4 column */
+.four-col-4x25 {}
+.four-col-4x25 .region {}
+.four-col-4x25 .region .inner {}
+.four-col-4x25 .section-1 {}
+.four-col-4x25 .section-2 {}
+.four-col-4x25 .col-1 {}
+.four-col-4x25 .col-2 {}
+.four-col-4x25 .col-3 {}
+.four-col-4x25 .col-4 {}
+.four-col-4x25 .col-1 .inner {}
+.four-col-4x25 .col-2 .inner {}
+.four-col-4x25 .col-3 .inner {}
+.four-col-4x25 .col-4 .inner {}
+
+/* 5 column */
+.five-col-5x20 {}
+.five-col-5x20 .region {}
+.five-col-5x20 .region .inner {}
+.five-col-5x20 .col-1 {}
+.five-col-5x20 .col-2 {}
+.five-col-5x20 .col-3 {}
+.five-col-5x20 .col-4 {}
+.five-col-5x20 .col-5 {}
+.five-col-5x20 .col-1 .inner {}
+.five-col-5x20 .col-2 .inner {}
+.five-col-5x20 .col-3 .inner {}
+.five-col-5x20 .col-4 .inner {}
+.five-col-5x20 .col-5 .inner {}
+
+/* 6 column */
+.six-col-6x16 {}
+.six-col-6x16 .region {}
+.six-col-6x16 .region .inner {}
+.six-col-6x16 .col-1 {}
+.six-col-6x16 .col-2 {}
+.six-col-6x16 .col-3 {}
+.six-col-6x16 .col-4 {}
+.six-col-6x16 .col-5 {}
+.six-col-6x16 .col-6 {}
+.six-col-6x16 .col-1 .inner {}
+.six-col-6x16 .col-2 .inner {}
+.six-col-6x16 .col-3 .inner {}
+.six-col-6x16 .col-4 .inner {}
+.six-col-6x16 .col-5 .inner {}
+.six-col-6x16 .col-6 .inner {}
+
+
+/**********************************************************
+                      AT Panels
+    Classes for styling the built in Panels Layouts
+    You need the Panels 3 module installed to use the
+    built in panels and the Adaptivetheme base theme
+    must be enabled.
+ **********************************************************/
+.panel-col {}
+.panel-col .inside {}
+.panel-pane {}
+
+.sixcol-6x16 {}
+.fivecol-5x20 {}
+.fourcol-4x25 {}
+
+.threecol-at-25-25-50 {}
+.threecol-at-50-25-25 {}
+
+.twocol-at-33-66 {}
+.twocol-at-66-33 {}
+
+.threecol-at-stacked-inset {}
+.twocol-at-stacked-inset {}
+
+
+/**********************************************************
+ *                 AT Button Wrappers
+ **********************************************************/
+/**
+ * Adaptivetheme wraps input buttons with SPANs for
+ * easy theming.
+ */
+ span.button-wrapper {} /* Outer wrapper */
+ span.button {} /* Inner wrapper */
+
+
+/**********************************************************
+ *                       Tables
+ **********************************************************/
+/**
+ * The selector groupings are from Garland which offers a
+ * sensible starting point for styling Drupal tables.
+ */
+table {}
+
+caption, th, td {}
+caption, th {}
+
+table, td, th {}
+tbody, tfoot, thead, tr {}
+thead th {}
+td, th {}
+
+tr.even, tr.odd, tbody th {}
+tr.odd, tr.info {}
+tr.even {}
+
+tr.drag {}
+tr.drag-previous  {}
+
+tr.odd td.active  {}
+tr.even td.active {}
+
+td.region,
+td.module,
+td.container td.category {}
+
+tr:first-child td.region,
+tr:first-child td.module,
+tr:first-child td.container {}
+
+
+/**********************************************************
+ *                   Forum Tables
+ **********************************************************/
+#forum table {}
+#forum tr td.forum {}
+#forum tr td.forum .name {}
+#forum div.indent {}
+
+
+/**Input submit**/
+input.form-submit {
+  background-color: #bf1b1a;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 1px solid #da4429;
+  text-transform: uppercase;
+  width: auto;
+  border-radius: 4px;
+}
+
+input.form-submit:hover{
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bf1b1a), to(#da4429));
+  background-image: -webkit-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: -o-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: linear-gradient(to bottom, #bf1b1a, #da4429);
+  background-repeat: repeat-x;  
+}
+
+
+
+/**Main menu super fish****/
+
+#superfish-1.sf-menu {
+  position: relative;
+  width: 100%;
+  display: block;  
+  float: left;
+  border: 1px solid #de3c33;
+  padding: 0px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+
+  background: #bf1b1a;    
+  background: -moz-linear-gradient(#da4429, #bf1b1a) repeat scroll 0 0 transparent; 
+  background: -webkit-linear-gradient(#da4429, #bf1b1a);
+  background: -o-linear-gradient(#da4429, #bf1b1a);
+  background: linear-gradient(#da4429, #bf1b1a);
+}
+
+#superfish-1.sf-menu ul {
+  background: #bf1b1a;    
+  background: -moz-linear-gradient(#da4429, #bf1b1a) repeat scroll 0 0 transparent; 
+  background: -webkit-linear-gradient(#da4429, #bf1b1a);
+  background: -o-linear-gradient(#da4429, #bf1b1a);
+  background: linear-gradient(#da4429, #bf1b1a);
+
+  padding: 9px 8px !important;
+  border-radius: 0 0 4px 4px;
+  margin: 6px 0 0;
+}
+
+#superfish-1.sf-menu > li {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+
+/*  background-color: #d44527;
+  background-image: -moz-linear-gradient(top, #e56131, #d44527);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e56131), to(#d44527));
+  background-image: -webkit-linear-gradient(top, #e56131, #d44527);
+  background-image: -o-linear-gradient(top, #e56131, #d44527);
+  background-image: linear-gradient(to bottom, #e56131, #d44527);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe56131', endColorstr='#ffd44527', GradientType=0);*/
+
+}
+
+#superfish-1.sf-menu > li.active,
+#superfish-1.sf-menu > li.active-trail,
+#superfish-1.sf-menu > li.sfHover,
+#superfish-1.sf-menu > li.current,
+#superfish-1.sf-menu > li:hover {
+  background: #da4429;    
+  background: -moz-linear-gradient(#bf1b1a, #da4429) repeat scroll 0 0 transparent; 
+  background: -webkit-linear-gradient(#bf1b1a, #da4429);
+  background: -o-linear-gradient(#bf1b1a, #da4429);
+  background: linear-gradient(#bf1b1a, #da4429);
+/*  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);*/
+  color: #ffffff;
+}
+
+#superfish-1.sf-menu > li a{
+  color: #ffffff;
+  display: block;
+  font: bold 12px 'Arial', sans-serif;
+  text-transform: uppercase;
+  border-left: 1px solid #cd3b24;
+  border-right: 1px solid #cd3b24;
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+#superfish-1.sf-menu > li li{
+  margin: 0px;
+  text-align: left;
+}
+
+#superfish-1.sf-menu > li li a:hover{
+  background: #bf1b1a;
+  border-radius: 4px;
+  border: 1px solid white;
+  margin: -1px;
+}
+
+
+#superfish-1.sf-menu > li li a{
+  border: 0px;
+  font-weight: normal;
+}
+
+/*#superfish-1.sf-menu {
+  position: relative;
+  width: 100%;
+  display: table;  
+  table-layout: auto;
+  border: 1px solid #de3c33;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+#superfish-1.sf-menu ul {
+  background-color: #bf1b1a;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe3bd0e', endColorstr='#ffbf1b1a', GradientType=0);
+  padding: 9px 8px !important;
+  border-radius: 0 0 4px 4px;
+  margin: 6px 0 0;
+  display: table-row;
+}
+
+#superfish-1.sf-menu > li {
+  text-align: center;
+  float: none;
+  display: table-cell;
+  position: relative; 
+  padding: 0;
+  margin: 0;
+  background-color: #d44527;
+  background-image: -moz-linear-gradient(top, #e56131, #d44527);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e56131), to(#d44527));
+  background-image: -webkit-linear-gradient(top, #e56131, #d44527);
+  background-image: -o-linear-gradient(top, #e56131, #d44527);
+  background-image: linear-gradient(to bottom, #e56131, #d44527);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe56131', endColorstr='#ffd44527', GradientType=0);
+
+}
+
+#superfish-1.sf-menu > li li{
+  margin: 0px;
+  text-align: left;
+}
+
+#superfish-1.sf-menu li li:hover ul,
+#superfish-1.sf-menu li li.sfHover ul {
+
+}
+
+#superfish-1.sf-menu ul li a{
+
+}
+
+#superfish-1.sf-menu > li.active,
+#superfish-1.sf-menu > li.active-trail,
+#superfish-1.sf-menu > li.sfHover,
+#superfish-1.sf-menu > li.current,
+#superfish-1.sf-menu > li:hover {
+  background-color: #bf1b1a;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe3bd0e', endColorstr='#ffbf1b1a', GradientType=0);
+  color: #ffffff;
+}
+
+#superfish-1.sf-menu > li a{
+  color: #ffffff;
+  display: block;
+  font: bold 12px 'Arial', sans-serif;
+  text-transform: uppercase;
+  border-left: 1px solid #cd3b24;
+  border-right: 1px solid #cd3b24;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#superfish-1.sf-menu > li li a:hover{
+  background: #bf1b1a;
+  border-radius: 4px;
+}
+
+
+#superfish-1.sf-menu > li li a{
+  border: 0px;
+  font-weight: normal;
+}*/
+
+
+/**Home page Image carousel****/
+#views-nivo-slider-content_summary-block_1{
+
+}
+#views-nivo-slider-content_summary-block_1 img{
+}
+
+/**
+* language dropdown form
+**/
+#lang-dropdown-form{
+  margin: 0px;
+}
+
+.dd .ddTitle,
+.dd .ddChild a{
+  padding: 3px 3px 3px 5px;
+  background: transparent;
+}
+.dd .ddTitle{
+  border-radius: 2px;  
+}
+
+.dd .ddChild a.selected,
+.dd .ddChild a:hover{
+  background: #d44527;
+}
+.dd .noBorderTop{
+}
+
+/**
+* Quick login block
+*/
+#webis_quicklogin{
+
+}
+#webis_quicklogin a{
+
+  cursor: pointer;
+  font-size: 11px;
+  border: 1px solid #da4429;
+  width: auto;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 27px;
+  padding: 5px 10px 5px 24px;
+  color: #bf1b1a;  
+}
+
+#webis_quicklogin #quicklogin-my-account,
+#webis_quicklogin #quicklogin-login{
+  background: url(../../images/icons/red/16x16/lock.png) no-repeat 4px center white;
+}
+
+#webis_quicklogin #quicklogin-logout,
+#webis_quicklogin #quicklogin-register{
+  background: url(../../images/icons/red/16x16/unlock.png) no-repeat 4px center white;
+}
+
+#webis_quicklogin a:hover,
+#webis_quicklogin #quicklogin-my-account:hover,
+#webis_quicklogin #quicklogin-login:hover,
+#webis_quicklogin #quicklogin-logout:hover,
+#webis_quicklogin #quicklogin-register:hover{
+  background-color: #bf1b1a;
+  color: white;
+}
+
+
+/**
+* Insurance Product list page
+**/
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor,
+.view-id-taxonomy_term.view-display-id-insurance_category_student,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel{
+  overflow: hidden;
+  display: block;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .item-list ul,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .item-list ul,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .item-list ul{
+  overflow: hidden;
+  display: block;
+  margin: 0px;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row{
+  float: left;
+  width: 27%;
+  background: #fefefe;
+  margin: 10px 1%;
+  border: 1px solid #e8e8e8;
+  padding: 2%;
+  box-shadow: 3px 3px 3px -2px #ccc;
+  list-style: none;
+  border-radius: 4px;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row:hover,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row:hover,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row:hover{
+  border: 1px solid #626469;
+  background: #626469;
+  color: white;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row:hover .title a,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row:hover .title a,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row:hover .title a{
+  color: white;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .title,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .title,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .title{
+  height: 56px;
+  margin: 10px 0;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .title a,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .title a,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .title a {
+  color: #d44527;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .title a:hover,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .title a:hover,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .title a:hover{
+  text-decoration: underline;
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .phpcode,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .phpcode,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .phpcode{
+  height: 146px;
+  display: block;
+  overflow: hidden;  
+}
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .field-content,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .field-content,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .field-content{
+
+}
+
+
+.view-id-taxonomy_term.view-display-id-insurance_category_visitor .views-row .field-image-fid img,
+.view-id-taxonomy_term.view-display-id-insurance_category_student .views-row .field-image-fid img,
+.view-id-taxonomy_term.view-display-id-insurance_category_travel .views-row .field-image-fid img{
+  width: 100%;
+  height: auto;
+}
+
+/**
+* Main menu sub menu block
+**/
+/*#block-menu_block-1 ul{
+  margin: 0px;
+}
+
+#block-menu_block-1 ul li{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  color: #878787;
+  border: 1px solid #e8e9e8;
+  border-bottom: none;
+}
+
+#block-menu_block-1 ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 37px;
+  padding: 0 10px 0 15px;
+  color: #878787;
+}*/
+
+/**
+* quick login block
+**/
+#block-webis_quicklogin-0{
+  float: left;
+  clear: none;
+}
+
+/*Language block***/
+#block-lang_dropdown-0{
+  float: right;
+  clear: none;
+}
+
+/**
+* Price Search block
+*/
+#block-nodeblock-84 {
+  overflow: hidden;
+  display: block;
+  margin-bottom: 0px;
+}
+
+#article-84 {
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  border: 2px solid #bf1b1a;
+  box-shadow: 1px 1px 2px 0 #bf1b1a;
+  padding: 20px 20px;
+  margin-bottom: 10px;
+  max-width: 600px;  
+}
+#article-84 h2.title {
+  color: white;
+  display: block;
+  font-size: 20px;
+  width: auto;
+  position: relative;
+  padding-left: 70px;
+  background: url("../../images/icons/red/48x48/calculator.png") no-repeat 4px center transparent;
+  padding: 10px 0 10px 60px;
+}
+
+#webform-client-form-84{
+  position: relative;
+  margin: 0px;
+}
+
+#search-step {
+  position: relative;
+  width: auto;
+  padding: 0px;
+  margin: 20px 10px;
+  background: white;
+  border-radius: 4px;
+}
+#search-step ul{
+  overflow: hidden;
+  display: block;
+  margin: 0px;
+  padding: 0;
+}
+#search-step ul li {
+  float: left;
+  list-style: none;
+  width: 33.3%;
+  padding: 10px 0;
+  margin: 0px;
+  text-align: center;
+}
+#search-step ul li.step1 {
+
+}
+#search-step ul li.step2 {
+
+}
+#search-step ul li.step3 {
+
+}
+
+#search-step ul li a{
+  color: black;
+  text-decoration: none;
+}
+#search-step ul li a:hover{
+  text-decoration: underline;
+}
+#search-step ul li span {
+
+  font-weight: bold;
+  color: #000;
+}
+#search-step ul li span.label{
+  margin-right: 10px;
+  padding: 6px 24px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 1px 2px 1px 0px #626469;
+  background-color: #626469;
+  background-image: -moz-linear-gradient(top, #B9B4B2, #626469);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#B9B4B2), to(#626469));
+  background-image: -webkit-linear-gradient(top, #B9B4B2, #626469);
+  background-image: -o-linear-gradient(top, #B9B4B2, #626469);
+  background-image: linear-gradient(to bottom, #B9B4B2, #626469);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB9B4B2', endColorstr='#FF626469', GradientType=0);  
+}
+#search-step ul li.active span.label{
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+}
+
+.lang-en #search-step ul li span.text{
+  font-size: 9px;
+}
+#search-step ul li span.text{
+  font-size: 12px;
+}
+
+
+#webform-client-form-84 .webform-component {
+  padding: 10px 0 5px;
+  margin: 0px;
+}
+
+#webform-client-form-84 .webform-component span.form-required,
+#webform-client-form-84 .webform-component span.marker{
+  color: white;
+}
+
+#webform-client-form-84 .webform-component label {
+  color: white;
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+
+#webform-client-form-84 .form-actions{
+  overflow: hidden;
+}
+#article-84 #webform-client-form-84 .form-actions {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  overflow: hidden;
+}
+#webform-client-form-84 .form-actions .button{
+  display: block;
+  background-color: #FAF5F4;
+  background-image: -moz-linear-gradient(top, #FAF5F4, #B9B9B9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAF5F4), to(#B9B9B9));
+  background-image: -webkit-linear-gradient(top, #FAF5F4, #B9B9B9);
+  background-image: -o-linear-gradient(top, #FAF5F4, #B9B9B9);
+  background-image: linear-gradient(to bottom, #FAF5F4, #B9B9B9);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFAF5F4', endColorstr='#ffB9B9B9', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#webform-client-form-84 .form-actions .button-wrapper{
+  float: left;
+}
+#webform-client-form-84 .form-actions .button:hover{
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+  color: white;
+
+}
+
+#webform-client-form-84 input.form-submit{
+  margin: 0px;
+  background: url(../../images/icons/red/24x24/search.png) no-repeat 3px center transparent;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ccc;
+  color: black;
+}
+#webform-client-form-84 input.form-submit:hover{
+  color: white;
+  border: 1px solid #da4429;
+}
+
+#webform-client-form-84 .webform-component .form-select{
+  margin: 0px;
+  width: 80px;
+  background: white;
+}
+#webform-client-form-84 .webform-component .form-select#edit-submitted-insurance-amount{
+  width: 164px;
+}
+#webform-client-form-84 .webform-component .form-select#edit-submitted-insurance-amount option[value="10000"],
+#webform-client-form-84 .webform-component .form-select#edit-submitted-insurance-amount option[value="25000"],
+#webform-client-form-84 .webform-component .form-select#edit-submitted-insurance-amount option[value="50000"],
+#webform-client-form-84 .webform-component .form-select#edit-submitted-insurance-amount option[value="100000"]{
+  color: #bf1b1a;
+}
+#webform-client-form-84 .webform-component input.webform-calendar{
+  padding: 0px;
+}
+
+#block-nodeblock-84 #webform-client-form-84{
+  margin: 0 10px;
+}
+
+/**
+* Home Carousel block
+***/
+#block-views-content_summary-block_1{
+  padding-bottom: 20px;
+  background: url(../../images/shadow.png) no-repeat center bottom transparent;
+  margin-bottom: 0px;
+}
+#block-views-content_summary-block_1 .block-inner{
+
+}
+#block-views-content_summary-block_1 .block-inner .views-row .body{
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  background:#000;
+  color:#fff;
+  width:100%;
+  z-index:8;
+  padding: 5px 10px;
+  opacity: 0.8;
+  overflow: hidden;
+  -moz-opacity: 0.8;
+  filter:alpha(opacity=8);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+#block-views-content_summary-block_1 .block-inner .views-row img{
+  display: block;
+}
+#block-views-content_summary-block_1 .views_slideshow_controls_text{
+  text-indent: -9999px;
+  font-size: 0px;
+}
+#block-views-content_summary-block_1 .views_slideshow_controls_text_previous,
+#block-views-content_summary-block_1 .views_slideshow_controls_text_next{
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  background: url(../../images/nav_btn.png) no-repeat;
+  overflow: hidden;  
+  width: 55px;
+  height: 55px;
+  bottom: 50%;
+  z-index: 100;
+}
+
+#block-views-content_summary-block_1 .views_slideshow_controls_text_previous{
+  background-position: -3px -33px;
+  left: 50px;
+}
+#block-views-content_summary-block_1 .views_slideshow_controls_text_previous:hover{
+  background-position: -123px -33px;  
+}
+
+#block-views-content_summary-block_1 .views_slideshow_controls_text_next{
+  background-position: -63px -33px;
+  right: 50px;
+}
+#block-views-content_summary-block_1 .views_slideshow_controls_text_next:hover{
+  background-position: -183px -33px;  
+}
+
+/**
+* Nivo Navigator
+**/
+
+a.nivo-prevNav{
+  background: url(../../images/toggle.png) no-repeat left 0 transparent;
+}
+a.nivo-prevNav:hover{
+ background-position: left bottom; 
+}
+a.nivo-nextNav{
+  background: url(../../images/toggle.png) no-repeat right 0 transparent;
+}
+a.nivo-nextNav:hover{
+  background-position: right bottom;
+}
+.nivo-directionNav a {
+  display: block;
+  width: 35px;
+  height: 58px;
+
+  text-indent: -9999px;
+  border: 0;
+}
+
+/**
+* Our blog style
+**/
+#block-views-content_summary-block_3{
+  margin: 0 1%;
+}
+
+#block-views-content_summary-block_3 .view-content .item-list ul{
+  overflow: hidden;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row{
+  float: left;
+  width: 32%;
+  list-style: none;
+  margin: 0px;
+  padding: 0 2% 0 0;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row.views-row-last{
+  padding-right: 0px;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .field-image-fid{
+  float: left;
+  margin-right: 4%;
+  width: 30%;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .field-image-fid img{
+  width: 100%;
+  height: auto;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .title{
+  float: left;
+  width: 64%;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .title a{
+  text-decoration: none;
+  color: #cd3b24;
+  font-size: 16px;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .teaser{
+  clear: both;
+  display: block;
+  height: 95px;
+  padding: 10px 0;
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .view-node{
+
+}
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .view-node a{
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border: 1px solid #da4429;
+  text-transform: uppercase;
+  width: auto;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 35px;
+}
+
+#block-views-content_summary-block_3 .view-content .item-list ul li.views-row .view-node a:hover{
+  background-color: #bf1b1a;
+  background-image: -moz-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bf1b1a), to(#da4429));
+  background-image: -webkit-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: -o-linear-gradient(top, #bf1b1a, #da4429);
+  background-image: linear-gradient(to bottom, #bf1b1a, #da4429);
+  background-repeat: repeat-x;
+}
+
+/*
+* FAQ Block
+***/
+
+#block-views-content_summary-block_4 .view-content ul,
+#block-views-content_summary-block_5 .view-content ul,
+#block-views-content_summary-block_6 .view-content ul,
+#block-views-content_summary-block_7 .view-content ul{
+  margin: 0px;
+  padding-left: 2px;
+  list-style: none;
+}
+
+#block-views-content_summary-block_4 .view-content ul li,
+#block-views-content_summary-block_5 .view-content ul li,
+#block-views-content_summary-block_6 .view-content ul li,
+#block-views-content_summary-block_7 .view-content ul li{
+  list-style: none;
+  list-style-image: none;
+  margin: 0px;
+  background: url(../../images/marker.gif) 0 8px no-repeat;
+  padding: 0 0 5px 16px;
+}
+
+#block-views-content_summary-block_4 .view-content ul li a,
+#block-views-content_summary-block_5 .view-content ul li a,
+#block-views-content_summary-block_6 .view-content ul li a,
+#block-views-content_summary-block_7 .view-content ul li a{
+  color: #8e8e8e;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+#block-views-content_summary-block_4 .view-content ul li a:hover,
+#block-views-content_summary-block_5 .view-content ul li a:hover,
+#block-views-content_summary-block_6 .view-content ul li a:hover,
+#block-views-content_summary-block_7 .view-content ul li a:hover{
+  text-decoration: underline;
+}
+
+/*
+* Footer section style
+**/
+
+#section2 .sections{
+  background: #626469;
+
+}
+#section2 .block ul.menu li{
+  background: none;
+  margin: 0px;
+  padding: 0px;
+}
+#section2 .block ul.menu li a{
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 16px;
+}
+#section2 .section .block .block-title{
+  color: #ffffff;
+  border-bottom: 1px solid #818387;
+  padding-bottom: 7px;
+}
+#section2 .block{
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+/*
+*
+* Newsletter block
+**/
+.block-simplenews #edit-mail{
+  width: 90%;
+}
+
+/****Jcarousel style default***/
+.view-id-frontpage.view-display-id-page {
+  position: relative;
+  margin: 0;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  background: #eee;
+  box-shadow: 3px 3px 3px -2px #ccc;
+  }
+.view-id-frontpage.view-display-id-page .view-header{
+  background: #fafafa;
+  height: 39px;
+  line-height: 39px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0;
+}
+.view-id-frontpage.view-display-id-page .view-content{
+  padding: 10px;
+
+}
+.jcarousel-skin-default .jcarousel-container-horizontal {
+  width: 100%;
+  height: 140px;
+  margin: auto;
+  padding:0px;
+}
+.jcarousel-skin-default .jcarousel-clip-horizontal{
+  width:90%;
+  margin: 0 5%;
+  overflow:hidden;
+}
+.jcarousel-skin-default .jcarousel-item{
+  width: 159px;
+  height: 140px;
+  border: 0px;
+  margin: 0px 4px;
+  position: relative;
+}
+
+.view-id-frontpage.view-display-id-page .views-field-title
+{
+  font-size: 11px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: #000;
+  opacity: 0.8;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  padding: 2px 4px;
+  overflow: hidden;
+  display: block;
+}
+.view-id-frontpage.view-display-id-page .views-field-title a
+{
+  color:#fff;
+  text-align: left;
+}
+
+.view-id-frontpage.view-display-id-page .jcarousel-skin-default .jcarousel-prev-horizontal{
+  left: 0px;
+  top: 0px;
+  background: url(../../images/camera-arrows.gif) no-repeat 8px center white;
+  width: 28px;
+  height: 100%;
+  display: block !important;
+}
+
+.view-id-frontpage.view-display-id-page .jcarousel-skin-default .jcarousel-next-horizontal {
+  right: 0px;
+  top: 0px;
+  background: url(../../images/camera-arrows.gif) no-repeat -28px center white;
+  width: 28px;
+  height: 100%;
+  display: block !important;
+}
+
+/**
+* Travel Insurance product block
+**/
+#block-views-taxonomy_term-block_1{}
+#block-views-taxonomy_term-block_1 .views-row{
+  background: #fefefe;
+  margin: 10px 1%;
+  border: 1px solid #e8e8e8;
+  padding: 2%;
+  box-shadow: 3px 3px 3px -2px #ccc;
+  list-style: none;
+  position: relative;
+}
+#block-views-taxonomy_term-block_1 .views-row:hover{
+
+}
+#block-views-taxonomy_term-block_1 .field-image-fid img{
+  width: 100%;
+  height: auto;
+}
+#block-views-taxonomy_term-block_1 .title{
+  text-align: center;
+  display: none;
+}
+#block-views-taxonomy_term-block_1 .views-row:hover .title{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.8;
+}
+#block-views-taxonomy_term-block_1 .title a{
+text-decoration: none;
+color: #8e8e8e;
+}
+#block-views-taxonomy_term-block_1 .title a:hover{
+  text-decoration: underline;
+}
+
+/**Front page block
+*
+**/
+.view-id-frontpage.view-display-id-page{
+
+}
+.view-id-frontpage.view-display-id-page .jcarousel-item{
+  position: relative;
+}
+.view-id-frontpage.view-display-id-page .jcarousel-item .title{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  height: 35px;
+  padding: 7px 0;
+}
+.view-id-frontpage.view-display-id-page .jcarousel-item .title a{
+  color: white;
+  text-decoration: none;
+}
+.view-id-frontpage.view-display-id-page .jcarousel-item .title a:hover{
+  text-decoration: underline;
+}
+.view-id-frontpage.view-display-id-page .jcarousel-item .field-image-fid{
+
+}
+
+
+/**
+* Knowledge center left side bar menu and secondary links
+**/
+#sidebar-last #block-menu_block-6,
+#sidebar-last #block-menu-menu-right-side-menu,
+#sidebar-last #block-menu-secondary-links{
+  margin-bottom: 0px;
+}
+
+#block-menu_block-6 ul li,
+#block-menu-secondary-links ul li{
+  background: #fefefe;
+  margin: 5px 0;
+  border: 1px solid #e8e8e8;
+  list-style: none outside none;
+  margin: 0 0 5px;
+  padding: 10px 6px;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 1px 1px 1px 0 #AAAAAA;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: bold;
+}
+#block-menu_block-6 ul li a,
+#block-menu-secondary-links ul li a{
+  color: #333333;
+  display: block;
+  font-size: 14px;
+  margin: 0;
+  padding: 3px 5px 3px 38px;
+  white-space: normal;
+  font-weight: bold;
+}
+
+.i18n-en #block-menu_block-6 ul li,
+.i18n-en #block-menu-secondary-links ul li{
+  line-height: 18px;
+}
+
+.i18n-en #block-menu_block-6 ul li a,
+.i18n-en #block-menu-secondary-links ul li a{
+  font-size: 12px;
+}
+
+/*#block-menu-secondary-links ul li a.how-to-buy{
+  background: url("../../images/icons/blue/24x24/help.png") no-repeat 4px center #fefefe;
+}
+#block-menu-secondary-links ul li a.how-to-claim{
+  background: url(../../images/icons/blue/24x24/edit.png) no-repeat 4px center #fefefe;  
+}
+#block-menu_block-6 ul li a.faq{
+  background: url(../../images/icons/blue/24x24/database.png) no-repeat 4px center #fefefe;
+}
+#block-menu_block-6 ul li a.compare{
+  background: url("../../images/icons/blue/24x24/chart.png") no-repeat scroll 4px center #fefefe;
+}
+#block-menu_block-6 ul li a.super-visa{
+  background: url(../../images/icons/blue/24x24/star.png) no-repeat 4px center #fefefe;
+}
+#block-menu_block-6 ul li a.other-products{
+  background: url("../../images/icons/blue/24x24/globe.png") no-repeat 4px center #fefefe;
+}
+#block-menu_block-6 ul li a.tax-and-insurance{
+background: url("../../images/icons/blue/24x24/dollar_currency_sign.png") no-repeat 5px center #fefefe;
+}
+#block-menu_block-6 ul li a.finance-and-investment{
+background: url("../../images/icons/blue/24x24/chart_up.png") no-repeat 4px center #fefefe;
+}
+#block-menu_block-6 ul li a.others{
+background: url(../../images/icons/blue/24x24/pin.png) no-repeat 4px center #fefefe;
+}*/
+
+#block-menu-secondary-links ul li a.how-to-buy {
+  background: url(../../images/icons/red/24x24/question_mark.png) no-repeat 4px center transparent;
+}
+#block-menu-secondary-links ul li a.how-to-claim {
+  background: url(../../images/icons/red/24x24/info.png) no-repeat 4px center transparent;
+}
+
+#block-menu-secondary-links ul li a.book-a-meeting {
+  background: url(../../images/icons/red/48x48/comments.png) no-repeat 4px center transparent;
+  padding: 12px 5px 12px 65px;
+  font-size: 14px;
+  text-decoration: none;
+}
+#block-menu-secondary-links ul li:hover a.book-a-meeting,
+#block-menu-secondary-links ul li a.book-a-meeting:hover{
+  text-decoration: underline;
+}
+
+
+#block-menu_block-6 ul li.visitor-to-canada-insurance-faq a,
+#block-menu_block-6 ul li.menu-mlid-8367 a {
+  background: url(../../images/icons/red/24x24/database.png) no-repeat 4px center #fefefe;
+}
+
+#block-menu_block-6 ul li.travel-insurance-products-comparison a,
+#block-menu_block-6 ul li.menu-mlid-8368 a {
+  background: url(../../images/icons/red/24x24/promotion.png) no-repeat scroll 4px center #fefefe;
+}
+
+#block-menu_block-6 ul li.super-visa-insurance a,
+#block-menu_block-6 ul li.menu-mlid-8369 a  {
+  background: url(../../images/icons/red/24x24/megaphone.png) no-repeat 4px center #fefefe;
+}
+
+#block-menu_block-6 ul li.other-insurance-products a,
+#block-menu_block-6 ul li.menu-mlid-8370 a  {
+  background: url(../../images/icons/red/24x24/world.png) no-repeat 4px center #fefefe;
+}
+
+#block-menu_block-6 ul li.tax-and-insurance a,
+#block-menu_block-6 ul li.menu-mlid-8371 a  {
+  background: url(../../images/icons/red/24x24/link.png) no-repeat 5px center #fefefe;
+}
+
+#block-menu_block-6 ul li.finance-and-investment a {
+background: url(../../images/icons/red/24x24/dollar_currency_sign.png) no-repeat 4px center #fefefe;
+}
+#block-menu_block-6 ul li.others a {
+background: url(../../images/icons/red/24x24/attach_document.png) no-repeat 4px center #fefefe;
+}
+
+/**Right side menu***/
+/*#block-menu-menu-right-side-menu ul li{
+  margin: 0px;
+  background: none;
+  background-color: #F50D0C;
+  background-image: -moz-linear-gradient(top, #F50D0C, #9B1C04);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F50D0C), to(#9B1C04));
+  background-image: -webkit-linear-gradient(top, #F50D0C, #9B1C04);
+  background-image: -o-linear-gradient(top, #F50D0C, #9B1C04);
+  background-image: linear-gradient(to bottom, #F50D0C, #9B1C04);
+  background-repeat: repeat-x;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  padding: 20px 0;
+  border-radius: 6px;
+}
+
+#block-menu-menu-right-side-menu ul li a.buy-online {
+  background: url("../../images/icons/blue/64x64/put_in_shopping_cart.png") no-repeat scroll 10px center transparent;
+  color: #FFFFFF;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 22px 15px 22px 92px;
+  text-transform: uppercase;
+  border-radius: 6px;
+}*/
+#sidebar-last #block-menu-menu-right-side-menu{
+  margin-top: 0px;
+}
+#block-menu-menu-right-side-menu ul li {
+  margin: 0px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  padding: 20px 0;
+  border-radius: 6px;
+  border: 1px solid #bf1b1a;
+  box-shadow: 3px 3px 3px -1px #aaa;
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+
+}
+#block-menu-menu-right-side-menu ul li:hover{
+  background: #FBFBFB;
+}
+#block-menu-menu-right-side-menu ul li a{
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 22px 15px 22px 80px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-decoration: none;
+}
+#block-menu-menu-right-side-menu ul li a:hover,
+#block-menu-menu-right-side-menu ul li:hover a{
+  color: #bf1b1a;
+}
+
+#block-menu-menu-right-side-menu ul li a.buy-online {
+  background: url(../../images/icons/red/64x64/shopping_cart.png) no-repeat 5px center transparent;
+}
+#block-menu-menu-right-side-menu ul li:hover a.buy-online{
+
+}
+
+
+
+
+/**
+* Testimonials block
+**/
+#block-views-content_summary-block_8{
+  margin-bottom: 0px;
+}
+#block-views-content_summary-block_8 .block-inner{
+  padding-bottom: 0px;
+}
+
+#block-views-content_summary-block_8 .views-row{
+  padding: 10px 15px;
+  background: url(../../images/section_bg.gif) 0 0 repeat-x #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px #ccc;  
+}
+#block-views-content_summary-block_8 .views-row .title a{
+font-size: 14px;
+text-decoration: none;
+color: black;  
+}
+#block-views-content_summary-block_8 .views-row .title a:hover{
+  text-decoration: underline;
+}
+
+#block-views-content_summary-block_8 .views-row .body{
+  font-style: italic;
+  font-size: 12px;
+  color: grey;  
+}
+#block-views-content_summary-block_8 .views-row .body p{
+  margin: 5px 0;
+}
+#block-views-content_summary-block_8 .views-row .field-customer-name-value,
+#block-views-content_summary-block_8 .views-row .field-date-value{
+  font-style: italic;
+  color: grey;
+  font-size: 12px;  
+}
+
+
+/*
+* Price search page
+***/
+table.search_result{
+  width: 100%;
+}
+.search_result_summary
+{
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+  background: #626469;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  overflow: hidden;
+}
+.search_result_summary .item
+{
+  font-weight: bold;
+  width: 25%;
+  float: left;
+  display: block;
+}
+.search_result_summary .item .label{
+  margin-right: 10px;
+}
+
+.search_result thead {
+
+  border: 1px dashed #626469;
+  color: white;
+}
+.search_result thead th
+{
+  font-size: 14px;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px dashed #626469;
+  text-transform: uppercase;
+}
+.search_result thead .deduction
+{
+  width:70px;
+}
+.search_result tbody{
+  border-top: 1px dashed #626469;
+}
+.search_result tr
+{
+
+}
+.search_result td
+{
+  border: 1px dashed #626469;
+  padding: 8px;
+}
+.search_result td.insurance_company .product_title .field-content{
+  padding: 10px 10px 10px 36px;
+  background: url(../../images/icons/red/24x24/package.png) no-repeat 5px center #626469;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid #626469;
+  display: block;
+  width: 190px;
+}
+.search_result td.insurance_company .product_title .field-content a{
+  color: white;
+  text-decoration: none;
+}
+
+.search_result td.insurance_company .product_title .field-content:hover{
+  background: url(../../images/icons/red/24x24/package.png) no-repeat 5px center #fff;
+
+}
+.search_result td.insurance_company .product_title .field-content:hover a{
+  color: #bf1b1a;
+}
+
+.search_result td.insurance_company .product_image{
+  margin-bottom: 10px;
+}
+.search_result td.insurance_company .product_image img{
+  width: 238px;
+  height: auto;
+}
+
+.search_result .price_per_day, .search_result .price_total
+{
+  width:180px;
+}
+.search_result .price_item
+{
+  display: block;
+    height: 1%;
+    overflow: hidden;
+}
+.search_result .price_item.rsv
+{
+  margin-bottom:8px;
+}
+.search_result .price_item .label
+{
+  float:left;
+  width:120px;
+}
+.search_result .price_item .value
+{
+  float:right;
+/*  width:30px;*/ 
+}
+
+.field-field-rate-schedule table, .field-field-rate-schedule-no-spmcc table
+{
+  width:100%;
+  border:1px solid #E0D8CB;
+}
+.field-field-rate-schedule table thead ,  .field-field-rate-schedule-no-spmcc table thead
+{
+  background: #E4D7C1;    
+  background: -moz-linear-gradient(#E4D7C1, #A59987) repeat scroll 0 0 transparent; 
+  background: -webkit-linear-gradient(#E4D7C1, #A59987);
+  background: -o-linear-gradient(#E4D7C1, #A59987);
+  background: linear-gradient(#E4D7C1, #A59987);
+  border: 1px solid #AF9467;
+    color: white;
+}
+.field-field-rate-schedule table tbody tr, .field-field-rate-schedule-no-spmcc table tbody tr{
+  border-bottom: 1px solid #E0D8CB;
+  background: #fefefe;
+}
+.field-field-rate-schedule table td,.field-field-rate-schedule table th,
+ .field-field-rate-schedule-no-spmcc table td,  .field-field-rate-schedule-no-spmcc table th
+{
+  padding:10px;
+}
+
+
+.buy_online_button{
+  display: block;
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;  
+  height: 27px;
+  width: 110px;
+  border-radius: 4px;
+  border: 1px solid #bf1b1a;
+  margin-top: 5px;
+}
+.buy_online_button a {
+  background: url("../../images/icons/red/24x24/shopping_cart.png") no-repeat scroll 5px center transparent;
+  color: white;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 0 20px;
+  line-height: 27px;
+  text-decoration: none;
+}
+.buy_online_button:hover{
+  background: #fbfbfb;
+}
+.buy_online_button:hover a{
+  color: #bf1b1a;  
+}
+
+.next_coverage_price_search{
+  display: block;
+  background: #fbfbfb;
+  height: 27px;
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid #bf1b1a;
+  margin-top: 10px;
+}
+.next_coverage_price_search:hover{
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;  
+}
+.next_coverage_price_search a{
+  background: url("../../images/icons/red/24x24/zoom_in.png") no-repeat scroll 5px center transparent;
+  color: #bf1b1a;    
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 0 20px;
+  line-height: 27px;
+  text-decoration: none;  
+}
+.next_coverage_price_search:hover a{
+  color: white;  
+}
+
+/*Insurance steps block***/
+#sidebar-last #search-step{
+  margin: 0px;
+}
+#sidebar-last #search-step ul li span.label{
+  display: block;
+  margin: 0 8px;
+}
+
+/*
+* Price search sidebar
+***/
+#sidebar-last #block-webform-client-block-84{
+
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  border: 2px solid #bf1b1a;
+  box-shadow: 1px 1px 2px 0 #bf1b1a;
+  padding: 7px;
+  margin-bottom: 10px;
+
+}
+
+#sidebar-last #block-webform-client-block-84 h2.block-title {
+  color: white;
+  background: url(../../images/icons/red/24x24/calculator.png) no-repeat 0px center transparent;
+  margin: 10px 0;
+  padding: 0 0 0 30px;
+  text-transform: uppercase;
+}
+
+#sidebar-last #block-webform-client-block-84 #webform-client-form-84{
+  margin: 0 0 10px 0;
+}
+
+#sidebar-last #block-webform-client-block-84 #webform-client-form-84 .form-actions{
+  margin-top: 10px;
+}
+
+#sidebar-last #block-webform-client-block-84 #webform-client-form-84 .webform-component label{
+  float: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+#sidebar-last #block-webform-client-block-84 #webform-client-form-84 .webform-component .form-select{
+  width: auto;
+}
+
+#sidebar-last #block-webform-client-block-84 #webform-client-form-84 span.button-wrapper {
+  float: left;
+}
+
+/**
+* Main menu sub menu
+***/
+
+#block-menu_block-1{
+  background: #fff;
+  border-radius: 4px;
+}
+
+#block-menu_block-1 .block-inner{
+  padding: 10px;
+}
+
+/**
+* Taxonomy term views page
+**/
+
+.arrowdown {
+  background: url(../../images/icons/red/16x16/download.png) no-repeat scroll right center transparent;
+  padding-right: 20px;
+}
+.arrowup {
+  background: url(../../images/icons/red/16x16/upload.png) no-repeat scroll right center transparent;
+  padding-right: 20px;
+}
+
+.view-id-content_summary.view-display-id-page_1 .views-row,
+.view-id-taxonomy_term.view-display-id-page .views-row{
+
+}
+.view-id-content_summary.view-display-id-page_1 .title,
+.view-id-taxonomy_term.view-display-id-page .title {
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 1px 1px 1px 0 #AAAAAA;
+  color: #FFFFFF;
+  margin: 10px 0;
+  padding: 10px 15px;
+}
+
+.view-id-content_summary.view-display-id-page_1 .title a,
+.view-id-taxonomy_term.view-display-id-page .title a
+{
+  font-size:14px;
+  font-weight:bold;
+  color: white;
+  text-decoration: none;
+}
+
+.view-id-content_summary.view-display-id-page_1 .title a:hover,
+.view-id-taxonomy_term.view-display-id-page .title a:hover{
+  text-decoration: underline;
+}
+
+.view-id-content_summary.view-display-id-page_1 .body,
+.view-id-taxonomy_term.view-display-id-page .body
+{
+  background: url(../../images/section_bg.gif) repeat-x 0 0 #eceae7;
+  padding:5px 15px;
+  border-radius: 0 0 4px 4px;
+  display: none;
+}
+
+
+/*
+* User profile page
+***/
+.user_basic_info_wrapper .item-list ul,
+.user_basic_info_wrapper .item-list ul li{
+  margin: 0px;
+}
+
+/**
+* Get a quote page
+*/
+
+#webform-client-form-166 fieldset {
+  background: url(../../images/section_bg.gif) repeat-x 0 0 #eceae7;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+  margin-top: 0px;
+}
+
+/*Quoting result page**/
+table.print_table {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+table.print_table td.header {
+    background-color: #dddddd;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+table.print_table td {
+    border: 1px solid #000000;
+    width: 25%;
+}
+
+table.print_table td.sub_header {
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table.print_table td.data {
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#webform-component-purchase-review
+{
+  background: none repeat scroll 0 0 #fbfbfb;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+#webform-component-purchase-review .insurance_title {
+  padding: 10px 10px 10px 36px;
+  background: url(../../images/icons/red/24x24/package.png) no-repeat 5px center #626469;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid #626469;
+  display: block;
+}
+
+.contact_review
+{
+  margin-top:20px;
+}
+
+
+.progress-wrapper{
+  margin: 10px 0 20px;  
+}
+
+.progress-wrapper .label{
+  margin-bottom: 5px;
+  text-align: center;
+}
+.progress-bar-wrapper{
+  background-color: #626469;
+  background-image: -moz-linear-gradient(top, #939597, #626469);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#939597), to(#626469));
+  background-image: -webkit-linear-gradient(top, #939597, #626469);
+  background-image: -o-linear-gradient(top, #939597, #626469);
+  background-image: linear-gradient(to bottom, #939597, #626469);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff939597', endColorstr='#ff626469', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 1px 1px 1px 0 #AAAAAA;
+
+}
+.progress-bar {
+  background-color: #da4429;
+  background-image: -moz-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#da4429), to(#bf1b1a));
+  background-image: -webkit-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: -o-linear-gradient(top, #da4429, #bf1b1a);
+  background-image: linear-gradient(to bottom, #da4429, #bf1b1a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda4429', endColorstr='#ffbf1b1a', GradientType=0);
+  border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  height:20px; 
+  width:0; 
+  text-align:center; 
+}
+
+.tip_box{
+  color: white; 
+  position: relative; 
+  top: 5px; 
+  visibility: visible; 
+  padding: 2px;
+  margin-left:10px; 
+  background-color: #bf1b1a; 
+  border: 1px dashed #da4429;
+}

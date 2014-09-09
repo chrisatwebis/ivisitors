@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function webis_quicklogin_uninstall() {
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function webis_quicklogin_install() {
+  // No-op.
+}
+
